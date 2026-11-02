@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Definizione e Proprietà delle Funzioni da ℝ in ℝ</title>
+  
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- KaTeX -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+</head>
+<body>
+
+  <!-- ================= TOP NAV HEADER ================= -->
+  <header class="site-nav-header">
+    <a href="index.html" class="home-btn">
+      <span>←</span> Torna all'Hub
+    </a>
+
+    <div class="header-nav-pills">
+      <a href="definizione.html" class="nav-pill active active-def">🧠 Definizione</a>
+      <a href="classificazione.html" class="nav-pill">📊 Classificazione</a>
+      <a href="geogebra.html" class="nav-pill">📐 GeoGebra</a>
+      <a href="test.html" class="nav-pill">📝 Quiz</a>
+    </div>
+  </header>
+
+  <!-- ================= CONTENUTI PRINCIPALI ================= -->
+  <main class="wrapper">
+    
+    <div style="text-align: center; margin-bottom: 32px;">
+      <div class="badge">🧠 Modulo 01 — Fondamenti di Analisi</div>
+      <h1 class="main-title">Definizione e Proprietà delle Funzioni</h1>
+      <p class="subtitle">
+        Cosa rende una relazione matematica una vera funzione? Dalla definizione insiemistica 
+        alla specificità dei numeri reali da $\mathbb{R}$ in $\mathbb{R}$, con regole di calcolo del dominio e simmetrie.
+      </p>
+    </div>
+
+    <!-- 1. DEFINIZIONE GENERALE -->
+    <article class="content-card">
+      <h2>1. Cos'è una Funzione? (Definizione Generale)</h2>
+      <p>
+        In matematica, dati due insiemi non vuoti $A$ e $B$, si definisce <strong>funzione</strong> da $A$ a $B$ 
+        (indicata con la notazione $f: A \to B$) una legge o relazione che associa ad <strong>ogni elemento</strong> $x \in A$ 
+        <strong>uno e un solo</strong> elemento $y \in B$.
+      </p>
+
+      <div class="formula-box">
+        $$\forall x \in A, \quad \exists !\, y \in B \quad \text{tale che} \quad y = f(x)$$
+      </div>
+
+      <div class="callout callout-info">
+        <div class="callout-title">🔑 I due requisiti essenziali dell'univocità:</div>
+        <p>
+          1. <strong>Totalità ("ad ogni elemento")</strong>: nessun elemento dell'insieme di partenza $A$ può restare privo di immagine.<br>
+          2. <strong>Univocità ("uno ed un solo elemento")</strong>: un singolo input $x$ non può mai produrre due risultati distinti!
+        </p>
+      </div>
+    </article>
+
+    <!-- 2. FUNZIONI NUMERICHE DA R IN R -->
+    <article class="content-card">
+      <h2>2. Funzioni Numeriche Reali: da $\mathbb{R}$ in $\mathbb{R}$</h2>
+      <p>
+        Quando sia l'insieme di partenza $A$ che l'insieme di arrivo $B$ sono sottoinsiemi dell'insieme dei numeri reali $\mathbb{R}$, 
+        la funzione prende il nome di <strong>funzione reale di variabile reale</strong> (o funzione numerica reale):
+      </p>
+
+      <div class="formula-box">
+        $$f: D \subseteq \mathbb{R} \longrightarrow \mathbb{R}, \qquad x \longmapsto y = f(x)$$
+      </div>
+
+      <p>
+        In questa notazione analitica:
+      </p>
+      <ul style="margin-left: 20px; margin-bottom: 20px; color: var(--text-muted); display: flex; flex-direction: column; gap: 6px; font-size: 0.95rem;">
+        <li><strong style="color: #fff;">$x$</strong> è detta <strong>variabile indipendente</strong> (il valore scelto arbitrariamente nel dominio).</li>
+        <li><strong style="color: #fff;">$y$</strong> è detta <strong>variabile dipendente</strong> (il risultato calcolato, ovvero l'<em>immagine</em> di $x$).</li>
+        <li><strong style="color: #fff;">$f(x)$</strong> rappresenta l'espressione o formula matematica che definisce il calcolo da eseguire.</li>
+      </ul>
+
+      <div class="grid-3">
+        <div class="sub-card">
+          <strong style="color: var(--accent-def-light);">Dominio Naturale ($D$)</strong>
+          <p style="font-size: 0.88rem; color: var(--text-muted); margin: 0;">
+            L'insieme più grande di valori reali di $x$ per cui l'espressione $f(x)$ è calcolabile e produce un numero reale finito.
+          </p>
+        </div>
+        <div class="sub-card">
+          <strong style="color: var(--accent-class-light);">Codominio ($B$)</strong>
+          <p style="font-size: 0.88rem; color: var(--text-muted); margin: 0;">
+            L'insieme di arrivo prestabilito in cui possono cadere i valori (normalmente l'intero asse reale $\mathbb{R}$).
+          </p>
+        </div>
+        <div class="sub-card">
+          <strong style="color: var(--accent-quiz-light);">Insieme Immagine ($\text{Im}(f)$)</strong>
+          <p style="font-size: 0.88rem; color: var(--text-muted); margin: 0;">
+            L'insieme dei soli valori $y$ effettivamente assunti dalla funzione: $\text{Im}(f) = \{y \in \mathbb{R} \mid \exists x \in D, y = f(x)\}$.
+          </p>
+        </div>
+      </div>
+
+      <div class="callout callout-warning">
+        <div class="callout-title">⚠️ Attenzione: Differenza fondamentale tra Codominio e Immagine</div>
+        <p>
+          Consideriamo la funzione quadratica elementare $f(x) = x^2$.<br>
+          Il dominio è tutto $\mathbb{R}$ e il codominio è l'intero asse reale $\mathbb{R}$.<br>
+          Tuttavia, poiché il quadrato di qualsiasi numero reale è sempre non negativo, l'<strong>insieme immagine</strong> è soltanto 
+          $\text{Im}(f) = [0, +\infty)$. I valori negativi appartengono al codominio, ma <em>non</em> all'immagine.
+        </p>
+      </div>
+    </article>
+
+    <!-- 3. GUIDA AL CALCOLO DEL DOMINIO -->
+    <article class="content-card">
+      <h2>3. Regole Pratiche per Determinare il Dominio Naturale</h2>
+      <p>
+        Nei numeri reali $\mathbb{R}$, le limitazioni al dominio derivano da tre divieti aritmetici fondamentali:
+        la divisione per zero è impossibile, non esiste la radice reale di indice pari di un numero negativo, 
+        e l'argomento di un logaritmo deve sempre essere strettamente positivo ($>0$).
+      </p>
+
+      <div class="table-responsive">
+        <table class="math-table">
+          <thead>
+            <tr>
+              <th>Tipologia Funzione</th>
+              <th>Forma Analitica</th>
+              <th>Condizione di Esistenza</th>
+              <th>Esempio Guidato</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong style="color: #fff;">Polinomiale intera</strong></td>
+              <td>$y = P(x)$</td>
+              <td>Nessuna: definita ovunque ($D = \mathbb{R}$)</td>
+              <td>$y = 4x^3 - 5x + 1 \implies D = \mathbb{R}$</td>
+            </tr>
+            <tr>
+              <td><strong style="color: #fff;">Razionale fratta</strong></td>
+              <td>$y = \frac{A(x)}{B(x)}$</td>
+              <td>Denominatore $\neq 0$: $B(x) \neq 0$</td>
+              <td>$y = \frac{x+2}{x - 5} \implies x \neq 5 \implies D = \mathbb{R} \setminus \{5\}$</td>
+            </tr>
+            <tr>
+              <td><strong style="color: #fff;">Irrazionale (indice pari)</strong></td>
+              <td>$y = \sqrt[2n]{A(x)}$</td>
+              <td>Radicando $\ge 0$: $A(x) \ge 0$</td>
+              <td>$y = \sqrt{2x - 8} \implies 2x - 8 \ge 0 \implies x \ge 4 \implies D = [4, +\infty)$</td>
+            </tr>
+            <tr>
+              <td><strong style="color: #fff;">Irrazionale (indice dispari)</strong></td>
+              <td>$y = \sqrt[2n+1]{A(x)}$</td>
+              <td>Ovunque $A(x)$ ha significato reale</td>
+              <td>$y = \sqrt[3]{x^2 - 4} \implies D = \mathbb{R}$</td>
+            </tr>
+            <tr>
+              <td><strong style="color: #fff;">Logaritmica</strong></td>
+              <td>$y = \log_a\big(A(x)\big)$</td>
+              <td>Argomento $> 0$: $A(x) > 0$</td>
+              <td>$y = \ln(x - 3) \implies x - 3 > 0 \implies x > 3 \implies D = (3, +\infty)$</td>
+            </tr>
+            <tr>
+              <td><strong style="color: #fff;">Esponenziale</strong></td>
+              <td>$y = a^{A(x)}$ ($a > 0$)</td>
+              <td>Ovunque l'esponente $A(x)$ è definito</td>
+              <td>$y = e^{\frac{1}{x}} \implies x \neq 0 \implies D = \mathbb{R} \setminus \{0\}$</td>
+            </tr>
+            <tr>
+              <td><strong style="color: #fff;">Goniometrica Tangente</strong></td>
+              <td>$y = \tan(x) = \frac{\sin x}{\cos x}$</td>
+              <td>$\cos(x) \neq 0 \implies x \neq \frac{\pi}{2} + k\pi$</td>
+              <td>$D = \mathbb{R} \setminus \{\frac{\pi}{2} + k\pi, k \in \mathbb{Z}\}$</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </article>
+
+    <!-- 4. GRAFICO E TEST RETTA VERTICALE -->
+    <article class="content-card">
+      <h2>4. Il Grafico Cartesiano e il Test della Retta Verticale</h2>
+      <p>
+        Il <strong>grafico</strong> di una funzione reale $f$ è il luogo dei punti del piano cartesiano $\mathbb{R}^2$ 
+        aventi come ascissa un elemento $x$ del dominio e come ordinata la corrispondente immagine $y = f(x)$:
+      </p>
+
+      <div class="formula-box">
+        $$\mathcal{G}_f = \big\{(x, y) \in \mathbb{R}^2 \;\big|\; x \in D, \; y = f(x)\big\}$$
+      </div>
+
+      <div class="grid-2" style="margin-top: 18px; align-items: stretch;">
+        <div class="sub-card">
+          <strong style="color: var(--accent-def-light);">Il Test della Retta Verticale</strong>
+          <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0;">
+            Una curva tracciata nel piano cartesiano rappresenta il grafico di una funzione reale $y = f(x)$ se e solo se 
+            <strong>ogni retta verticale $x = k$</strong> interseca la curva in <strong>al massimo un punto</strong>.
+          </p>
+        </div>
+
+        <div class="sub-card" style="border-left: 3px solid var(--danger);">
+          <strong style="color: #f87171;">🚫 Controesempio: La Circonferenza</strong>
+          <p style="font-size: 0.88rem; color: var(--text-muted); margin: 0;">
+            L'equazione $x^2 + y^2 = 9$ <strong>non definisce una funzione</strong> di $x$. 
+            La retta verticale $x = 0$ interseca la circonferenza in due punti distinti: $(0, 3)$ e $(0, -3)$. 
+            Un solo valore di input darebbe due output, violando la definizione di funzione!
+          </p>
+        </div>
+      </div>
+    </article>
+
+    <!-- 5. PROPRIETÀ GLOBALI -->
+    <article class="content-card">
+      <h2>5. Proprietà Globali: Iniettività, Simmetrie e Periodicità</h2>
+
+      <div class="grid-2">
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <div class="sub-card">
+            <strong style="color: var(--accent-def-light);">Funzione Iniettiva</strong>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 6px;">
+              Input distinti generano output distinti: $x_1 \neq x_2 \implies f(x_1) \neq f(x_2)$.
+            </p>
+            <span style="font-size: 0.8rem; color: #38bdf8; font-weight: 600;">
+              📏 Test Retta Orizzontale: ogni retta $y = k$ tocca il grafico al massimo in 1 punto.
+            </span>
+          </div>
+
+          <div class="sub-card">
+            <strong style="color: var(--accent-class-light);">Funzione Suriettiva & Biiettiva</strong>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin: 0;">
+              <strong>Suriettiva:</strong> ogni elemento del codominio è raggiunto dalla funzione ($\text{Im}(f) = B$).<br>
+              <strong>Biiettiva (Biunivoca):</strong> sia iniettiva che suriettiva. Solo le funzioni biiettive ammettono una funzione inversa $f^{-1}(x)$.
+            </p>
+          </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <div class="sub-card">
+            <strong style="color: var(--accent-quiz-light);">Funzione Pari (Simmetria Asse Y)</strong>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin: 0;">
+              Soddisfa $f(-x) = f(x)$. Il grafico è specularmente simmetrico rispetto all'asse verticale delle ordinate $y$. Esempi: $f(x) = x^2, \cos(x)$.
+            </p>
+          </div>
+
+          <div class="sub-card">
+            <strong style="color: var(--accent-geo-light);">Funzione Dispari (Simmetria Origine O)</strong>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin: 0;">
+              Soddisfa $f(-x) = -f(x)$. Il grafico presenta simmetria centrale rispetto al punto $(0,0)$. Esempi: $f(x) = x^3, \sin(x)$.
+            </p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Navigazione a Fondo Pagina -->
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; margin-top: 36px;">
+      <a href="index.html" class="home-btn">← Torna all'Hub</a>
+      <a href="classificazione.html" class="btn btn-class" style="width: auto; padding: 12px 24px;">
+        Passa a 2. Classificazione & Grafici ➔
+      </a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      Tutti i moduli sono collegati e navigabili in locale.<br>
+      Contenuti ispirati a <em>YouMath</em> e <em>Wikipedia</em>.
+    </footer>
+
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Interattivo sulle Funzioni da ℝ in ℝ</title>
+  
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- KaTeX -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+</head>
+<body>
+
+  <!-- ================= TOP NAV HEADER ================= -->
+  <header class="site-nav-header">
+    <a href="index.html" class="home-btn">
+      <span>←</span> Torna all'Hub
+    </a>
+
+    <div class="header-nav-pills">
+      <a href="definizione.html" class="nav-pill">🧠 Definizione</a>
+      <a href="classificazione.html" class="nav-pill">📊 Classificazione</a>
+      <a href="geogebra.html" class="nav-pill">📐 GeoGebra</a>
+      <a href="test.html" class="nav-pill active active-quiz">📝 Quiz</a>
+    </div>
+  </header>
+
+  <!-- ================= CONTENUTI PRINCIPALI ================= -->
+  <main class="wrapper quiz-container">
+    
+    <div style="text-align: center; margin-bottom: 28px;">
+      <div class="badge badge-green">📝 Modulo 04 — Test & Autovalutazione</div>
+      <h1 class="main-title">Quiz Interattivo sulle Funzioni</h1>
+      <p class="subtitle" style="margin-bottom: 20px;">
+        10 quesiti mirati per verificare la tua comprensione su definizione, calcolo del dominio, 
+        simmetrie, lettura dei grafici cartesiani e comandi GeoGebra.
+      </p>
+    </div>
+
+    <!-- Barra delle Statistiche e Avanzamento -->
+    <div class="stats-card">
+      <div class="stats-header">
+        <span id="quizStatusText">Caricamento del quesito...</span>
+        <span id="quizLiveScore">Punteggio: 0/0</span>
+      </div>
+      <div class="progress-bar-container">
+        <div class="progress-bar" id="quizProgressBar"></div>
+      </div>
+    </div>
+
+    <!-- Contenitore Domanda Dinamica -->
+    <div id="quizQuestionsContainer">
+      <!-- Generato dinamicamente da js/quiz.js -->
+    </div>
+
+    <!-- Card Risultati Finali -->
+    <div class="quiz-results-card" id="quizResultsCard">
+      <div class="score-circle">
+        <div class="score-number" id="finalScoreNumber">0</div>
+        <div class="score-total">su 10</div>
+      </div>
+      <h2 id="resultsFeedbackTitle" style="font-size: 1.4rem; color: #fff; margin-bottom: 8px;">Ottimo lavoro!</h2>
+      <p id="resultsFeedbackDesc" style="color: var(--text-muted); font-size: 0.95rem; max-width: 500px; margin: 0 auto 24px auto;">
+        Hai completato il test di autovalutazione sulle funzioni reali.
+      </p>
+      
+      <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;">
+        <button class="btn btn-quiz" id="restartQuizBtn" style="width: auto; padding: 10px 20px;">🔄 Riprova il Quiz</button>
+        <a href="definizione.html" class="home-btn">Ripassa la Teoria</a>
+        <a href="index.html" class="home-btn">Torna all'Hub</a>
+      </div>
+    </div>
+
+    <!-- Navigazione a Fondo Pagina -->
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; margin-top: 36px;">
+      <a href="geogebra.html" class="home-btn">← 3. Laboratorio GeoGebra</a>
+      <a href="index.html" class="home-btn">Torna all'Hub 🏠</a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      Tutti i moduli sono collegati e navigabili in locale.<br>
+      Autovalutazione con feedback didattico immediato.
+    </footer>
+
+  </main>
+
+  <script src="js/main.js"></script>
+  <script src="js/quiz.js"></script>
+</body>
+</html>

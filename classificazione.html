@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Classificazione e Grafici delle Funzioni da ℝ in ℝ</title>
+  
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- KaTeX -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+</head>
+<body>
+
+  <!-- ================= TOP NAV HEADER ================= -->
+  <header class="site-nav-header">
+    <a href="index.html" class="home-btn">
+      <span>←</span> Torna all'Hub
+    </a>
+
+    <div class="header-nav-pills">
+      <a href="definizione.html" class="nav-pill">🧠 Definizione</a>
+      <a href="classificazione.html" class="nav-pill active active-class">📊 Classificazione</a>
+      <a href="geogebra.html" class="nav-pill">📐 GeoGebra</a>
+      <a href="test.html" class="nav-pill">📝 Quiz</a>
+    </div>
+  </header>
+
+  <!-- ================= CONTENUTI PRINCIPALI ================= -->
+  <main class="wrapper">
+    
+    <div style="text-align: center; margin-bottom: 32px;">
+      <div class="badge badge-purple">📊 Modulo 02 — Tipologie & Visualizzatore Dinamico</div>
+      <h1 class="main-title">Classificazione delle Funzioni e Grafici</h1>
+      <p class="subtitle">
+        Come si suddivide l'universo delle funzioni reali? 
+        Esplora l'albero completo dalle funzioni algebriche a quelle trascendenti, 
+        e sperimenta con il simulatore grafico interattivo.
+      </p>
+    </div>
+
+    <!-- VISUALIZZATORE GRAFICO INTERATTIVO -->
+    <div class="explorer-container">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; flex-wrap: wrap; gap: 10px;">
+        <div>
+          <h2 style="font-size: 1.25rem; font-weight: 700; color: #fff;">
+            📈 Visualizzatore Interattivo di Grafici Cartesiani
+          </h2>
+          <p style="font-size: 0.88rem; color: var(--text-muted); margin: 0;">
+            Scegli una famiglia di funzioni, varia i parametri con gli slider e osserva il grafico in tempo reale.
+          </p>
+        </div>
+        <span class="badge badge-purple" style="margin: 0; padding: 4px 12px; font-size: 11px;">Canvas Dinamico</span>
+      </div>
+
+      <div class="explorer-grid">
+        <!-- Canvas -->
+        <div>
+          <div class="graph-canvas-wrap">
+            <canvas id="graphCanvas"></canvas>
+          </div>
+          <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 8px; text-align: center;">
+            💡 Muovi il mouse sul grafico per visualizzare le coordinate esatte $(x, y)$.
+          </div>
+        </div>
+
+        <!-- Controlli Slider -->
+        <div>
+          <div class="control-group">
+            <label class="control-label" for="funcTypeSelect">Famiglia di Funzione:</label>
+            <select id="funcTypeSelect" class="control-select">
+              <option value="parabola">Quadratica: f(x) = ax² + bx + c</option>
+              <option value="linear">Lineare: f(x) = mx + q</option>
+              <option value="rational">Razionale Fratta: f(x) = k/(x-x₀) + y₀</option>
+              <option value="sqrt">Irrazionale: f(x) = a√(x-x₀)</option>
+              <option value="exponential">Esponenziale: f(x) = aˣ</option>
+              <option value="sinusoid">Goniometrica: f(x) = A·sin(ωx)</option>
+            </select>
+          </div>
+
+          <div id="sliderControls">
+            <!-- Popolato da js/graph-explorer.js -->
+          </div>
+
+          <div class="graph-info-box">
+            <div style="font-family: monospace; font-weight: 700; color: var(--accent-def-light); margin-bottom: 6px;" id="currentFormulaDisplay">
+              f(x) = x² - 2
+            </div>
+            <div style="font-weight: 600; font-size: 0.85rem; color: #fff; margin-bottom: 4px;" id="currentDomainDisplay">
+              Dominio: D = ℝ
+            </div>
+            <div style="font-size: 0.82rem; color: var(--text-muted);" id="currentPropertiesDisplay">
+              Concavità verso l'alto.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 1. FUNZIONI ALGEBRICHE -->
+    <article class="content-card">
+      <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
+        <span class="badge" style="margin: 0;">GRUPPO A</span>
+        <h2>Funzioni Algebriche</h2>
+      </div>
+      <p>
+        Una funzione si definisce <strong>algebrica</strong> se nella sua espressione analitica compaiono solo le quattro 
+        operazioni aritmetiche fondamentali (addizione, sottrazione, moltiplicazione, divisione) e l'estrazione di radice 
+        (o elevamento a potenza con esponente razionale).
+      </p>
+
+      <div class="grid-3">
+        <div class="sub-card">
+          <strong style="color: var(--accent-def-light);">Razionali Intere (Polinomiali)</strong>
+          <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 8px;">
+            La variabile $x$ non compare a denominatore né sotto radice:
+            $$f(x) = a_n x^n + \dots + a_1 x + a_0$$
+          </p>
+          <ul style="font-size: 0.82rem; color: var(--text-muted); margin-left: 16px;">
+            <li><strong>Lineari ($n=1$)</strong>: rette $y = mx+q$</li>
+            <li><strong>Quadratiche ($n=2$)</strong>: parabole $y = ax^2+bx+c$</li>
+            <li><strong>Dominio</strong>: sempre tutto $\mathbb{R}$</li>
+          </ul>
+        </div>
+
+        <div class="sub-card">
+          <strong style="color: var(--accent-class-light);">Razionali Fratte</strong>
+          <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 8px;">
+            Rapporto tra due polinomi con $x$ al denominatore:
+            $$f(x) = \frac{P(x)}{Q(x)}$$
+          </p>
+          <ul style="font-size: 0.82rem; color: var(--text-muted); margin-left: 16px;">
+            <li><strong>Condizione</strong>: $Q(x) \neq 0$</li>
+            <li><strong>Asintoti verticali</strong>: zeri di $Q(x)$</li>
+            <li><strong>Omografica</strong>: $y = \frac{ax+b}{cx+d}$ (iperbole equilatera)</li>
+          </ul>
+        </div>
+
+        <div class="sub-card">
+          <strong style="color: var(--accent-geo-light);">Irrazionali</strong>
+          <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 8px;">
+            La variabile $x$ compare sotto il segno di radice:
+            $$f(x) = \sqrt[n]{P(x)}$$
+          </p>
+          <ul style="font-size: 0.82rem; color: var(--text-muted); margin-left: 16px;">
+            <li><strong>Indice pari</strong>: richiede $P(x) \ge 0$</li>
+            <li><strong>Indice dispari</strong>: definita ovunque $P(x) \in \mathbb{R}$</li>
+            <li><strong>Esempio</strong>: $f(x) = \sqrt{x+1}$ con $D = [-1, +\infty)$</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <!-- 2. FUNZIONI TRASCENDENTI -->
+    <article class="content-card purple">
+      <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
+        <span class="badge badge-purple" style="margin: 0;">GRUPPO B</span>
+        <h2>Funzioni Trascendenti</h2>
+      </div>
+      <p>
+        Si definiscono <strong>trascendenti</strong> tutte le funzioni reali che non sono algebriche. 
+        Comprendono le funzioni esponenziali, logaritmiche, le funzioni goniometriche e le loro inverse.
+      </p>
+
+      <div class="grid-3">
+        <div class="sub-card">
+          <strong style="color: var(--accent-class-light);">Esponenziali</strong>
+          <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 8px;">
+            La variabile $x$ è ad esponente:
+            $$f(x) = a^x \quad (a > 0, a \neq 1)$$
+          </p>
+          <ul style="font-size: 0.82rem; color: var(--text-muted); margin-left: 16px;">
+            <li><strong>Dominio</strong>: $D = \mathbb{R}$</li>
+            <li><strong>Immagine</strong>: $(0, +\infty)$ (sempre $> 0$)</li>
+            <li>Passa sempre per il punto $(0, 1)$</li>
+            <li>Crescente se $a>1$, decrescente se $0<a<1$</li>
+          </ul>
+        </div>
+
+        <div class="sub-card">
+          <strong style="color: var(--accent-def-light);">Logaritmiche</strong>
+          <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 8px;">
+            La funzione inversa dell'esponenziale:
+            $$f(x) = \log_a(x) \quad \text{o} \quad \ln(x)$$
+          </p>
+          <ul style="font-size: 0.82rem; color: var(--text-muted); margin-left: 16px;">
+            <li><strong>Dominio</strong>: $D = (0, +\infty)$</li>
+            <li><strong>Immagine</strong>: Tutto $\mathbb{R}$</li>
+            <li>Interseca l'asse $x$ nel punto $(1, 0)$</li>
+            <li>Asintoto verticale: retta $x = 0$</li>
+          </ul>
+        </div>
+
+        <div class="sub-card">
+          <strong style="color: var(--accent-quiz-light);">Goniometriche</strong>
+          <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 8px;">
+            Funzioni circolari periodiche:
+            $$\sin(x), \; \cos(x), \; \tan(x)$$
+          </p>
+          <ul style="font-size: 0.82rem; color: var(--text-muted); margin-left: 16px;">
+            <li>$\sin(x), \cos(x)$: periodo $2\pi$, limitate in $[-1, 1]$</li>
+            <li>$\tan(x)$: periodo $\pi$, asintoti in $\frac{\pi}{2} + k\pi$</li>
+            <li>Inverse: $\arcsin(x), \arccos(x), \arctan(x)$</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <!-- 3. FUNZIONI A TRATTI -->
+    <article class="content-card">
+      <h2>3. Funzioni a Tratti: Il Valore Assoluto</h2>
+      <p>
+        Una funzione può essere definita tramite leggi analitiche diverse in diversi sottoinsiemi del suo dominio.
+        L'esempio fondamentale è la funzione <strong>valore assoluto (modulo)</strong>:
+      </p>
+
+      <div class="formula-box">
+        $$f(x) = |x| = \begin{cases} x & \text{se } x \ge 0 \\ -x & \text{se } x < 0 \end{cases}$$
+      </div>
+
+      <p style="font-size: 0.9rem; color: var(--text-muted);">
+        Il grafico di $|x|$ è una forma a "V", continua su tutto $\mathbb{R}$, simmetrica rispetto all'asse $y$ (funzione pari) 
+        con punto angoloso nell'origine $(0,0)$.
+      </p>
+    </article>
+
+    <!-- Navigazione a Fondo Pagina -->
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; margin-top: 36px;">
+      <a href="definizione.html" class="home-btn">← 1. Definizione & Proprietà</a>
+      <a href="geogebra.html" class="btn btn-geo" style="width: auto; padding: 12px 24px;">
+        Vai a 3. Laboratorio GeoGebra ➔
+      </a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      Tutti i moduli sono collegati e navigabili in locale.<br>
+      Contenuti ispirati a <em>YouMath</em> e <em>Wikipedia</em>.
+    </footer>
+
+  </main>
+
+  <script src="js/main.js"></script>
+  <script src="js/graph-explorer.js"></script>
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laboratorio GeoGebra per lo Studio di Funzione</title>
+  
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- KaTeX -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+</head>
+<body>
+
+  <!-- ================= TOP NAV HEADER ================= -->
+  <header class="site-nav-header">
+    <a href="index.html" class="home-btn">
+      <span>←</span> Torna all'Hub
+    </a>
+
+    <div class="header-nav-pills">
+      <a href="definizione.html" class="nav-pill">🧠 Definizione</a>
+      <a href="classificazione.html" class="nav-pill">📊 Classificazione</a>
+      <a href="geogebra.html" class="nav-pill active active-geo">📐 GeoGebra</a>
+      <a href="test.html" class="nav-pill">📝 Quiz</a>
+    </div>
+  </header>
+
+  <!-- ================= CONTENUTI PRINCIPALI ================= -->
+  <main class="wrapper">
+    
+    <div style="text-align: center; margin-bottom: 32px;">
+      <div class="badge badge-amber">📐 Modulo 03 — Laboratorio Digitale</div>
+      <h1 class="main-title">Laboratorio GeoGebra: Guida e Simulatore</h1>
+      <p class="subtitle">
+        GeoGebra è il software di matematica dinamica per eccellenza. Impara a tracciare funzioni, 
+        individuare asintoti, calcolare derivate e usare i cursori per visualizzare le trasformazioni dei grafici.
+      </p>
+    </div>
+
+    <!-- GEOGEBRA EMBED -->
+    <div class="geogebra-embed-wrapper">
+      <div class="geogebra-header">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <span style="font-size: 1.25rem;">📱</span>
+          <strong style="color: #fff;">GeoGebra Graphing Calculator Suite</strong>
+          <span class="badge badge-amber" style="margin: 0; padding: 3px 10px; font-size: 11px;">Embed Ufficiale</span>
+        </div>
+        <div style="font-size: 0.85rem; color: var(--text-muted);">
+          Digita nella riga di comando a sinistra o usa i comandi pronti sotto
+        </div>
+      </div>
+
+      <div class="geogebra-iframe-container">
+        <iframe 
+          src="https://www.geogebra.org/calculator?embed" 
+          title="GeoGebra Graphing Calculator"
+          allow="fullscreen"
+          loading="lazy">
+        </iframe>
+      </div>
+    </div>
+
+    <!-- COMANDI RAPIDI DA COPIARE -->
+    <div style="margin-top: 24px; margin-bottom: 32px;">
+      <h2 style="font-size: 1.25rem; font-weight: 700; color: #fff; margin-bottom: 6px;">
+        🚀 Comandi Pronti da Provare in GeoGebra
+      </h2>
+      <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 14px;">
+        Clicca su "Copia" e incolla direttamente nella barra di inserimento della calcolatrice qui sopra:
+      </p>
+
+      <div class="commands-grid">
+        <div class="command-card">
+          <strong style="color: #fff; font-size: 0.9rem;">1. Funzione Razionale Fratta</strong>
+          <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0;">Traccia una frazione con due asintoti:</p>
+          <div class="command-code">
+            <span>f(x) = (x^2 - 1)/(x^2 - 4)</span>
+            <button class="copy-btn" onclick="copyToClipboard('f(x) = (x^2 - 1)/(x^2 - 4)', this)">Copia</button>
+          </div>
+        </div>
+
+        <div class="command-card">
+          <strong style="color: #fff; font-size: 0.9rem;">2. Asintoti Automatici</strong>
+          <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0;">Trova e disegna tutti gli asintoti di $f$:</p>
+          <div class="command-code">
+            <span>Asintoto(f)</span>
+            <button class="copy-btn" onclick="copyToClipboard('Asintoto(f)', this)">Copia</button>
+          </div>
+        </div>
+
+        <div class="command-card">
+          <strong style="color: #fff; font-size: 0.9rem;">3. Zeri della Funzione</strong>
+          <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0;">Trova i punti in cui $f(x) = 0$:</p>
+          <div class="command-code">
+            <span>Radice(f)</span>
+            <button class="copy-btn" onclick="copyToClipboard('Radice(f)', this)">Copia</button>
+          </div>
+        </div>
+
+        <div class="command-card">
+          <strong style="color: #fff; font-size: 0.9rem;">4. Massimi e Minimi Relativi</strong>
+          <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0;">Determina i punti stazionari di estremo:</p>
+          <div class="command-code">
+            <span>Estremo(f)</span>
+            <button class="copy-btn" onclick="copyToClipboard('Estremo(f)', this)">Copia</button>
+          </div>
+        </div>
+
+        <div class="command-card">
+          <strong style="color: #fff; font-size: 0.9rem;">5. Funzione a Tratti</strong>
+          <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0;">Disegna $x^2$ per $x \ge 0$ e $-x$ per $x < 0$:</p>
+          <div class="command-code">
+            <span>Se(x >= 0, x^2, -x)</span>
+            <button class="copy-btn" onclick="copyToClipboard('Se(x >= 0, x^2, -x)', this)">Copia</button>
+          </div>
+        </div>
+
+        <div class="command-card">
+          <strong style="color: #fff; font-size: 0.9rem;">6. Calcolo della Derivata</strong>
+          <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0;">Traccia istantaneamente la derivata prima:</p>
+          <div class="command-code">
+            <span>f'(x)</span>
+            <button class="copy-btn" onclick="copyToClipboard('f\'(x)', this)">Copia</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GUIDA SINTASSI E CURSORI -->
+    <div class="grid-2">
+      <!-- Blocco Sintassi -->
+      <article class="content-card amber">
+        <h2>⌨️ Sintassi ed Operatori Matematici</h2>
+        <ul style="display: flex; flex-direction: column; gap: 10px; list-style: none; color: var(--text-muted); font-size: 0.9rem;">
+          <li>
+            <strong style="color: #fff;">Potenze:</strong> usa il simbolo <code>^</code>.<br>
+            <span style="font-size: 0.82rem;">Es: <code>x^3 - 4x^2 + 5</code></span>
+          </li>
+          <li>
+            <strong style="color: #fff;">Radici:</strong> <code>sqrt(...)</code> o <code>nroot(x, n)</code>.<br>
+            <span style="font-size: 0.82rem;">Es: <code>sqrt(2x + 1)</code> oppure <code>nroot(x, 3)</code></span>
+          </li>
+          <li>
+            <strong style="color: #fff;">Valore Assoluto:</strong> <code>abs(x)</code> oppure <code>|x|</code>.<br>
+            <span style="font-size: 0.82rem;">Es: <code>abs(x^2 - 4)</code></span>
+          </li>
+          <li>
+            <strong style="color: #fff;">Logaritmi:</strong> <code>ln(x)</code> naturale, <code>log10(x)</code> base 10, <code>log(b, x)</code> base generica $b$.
+          </li>
+          <li>
+            <strong style="color: #fff;">Goniometria:</strong> <code>sin(x)</code>, <code>cos(x)</code>, <code>tan(x)</code>.<br>
+            <span style="font-size: 0.82rem;">Nota: GeoGebra ragiona sempre in <strong>radianti</strong>.</span>
+          </li>
+        </ul>
+      </article>
+
+      <!-- Blocco Cursori -->
+      <article class="content-card amber">
+        <h2>🎚️ Il Potere dei Cursori (Slider)</h2>
+        <p>
+          I cursori consentono di studiare una <strong>famiglia parametrica di funzioni</strong> in modo visivo e immediato:
+        </p>
+
+        <div class="sub-card" style="margin-bottom: 12px;">
+          <strong style="color: var(--accent-geo-light);">Come creare un cursore dinamico:</strong>
+          <ol style="margin-left: 18px; margin-top: 6px; font-size: 0.88rem; color: var(--text-muted);">
+            <li>Digita nella barra: <code>k = 1</code> e premi Invio. Verrà generato uno slider.</li>
+            <li>Scrivi poi la funzione dipendente dal cursore: <code>f(x) = sin(k*x)</code>.</li>
+            <li>Trascina il cursore per osservare la frequenza dell'onda modificarsi in diretta!</li>
+          </ol>
+        </div>
+
+        <div class="callout callout-success" style="margin: 0;">
+          <div class="callout-title">💡 Esperimento Didattico</div>
+          <p style="font-size: 0.85rem;">
+            Crea tre cursori <code>a=1</code>, <code>b=0</code>, <code>c=0</code> e definisci $f(x) = a x^2 + b x + c$.<br>
+            Muovendo $a$, scoprirai come il segno regola la <strong>concavità</strong> e il valore assoluto l'<strong>apertura</strong>.
+          </p>
+        </div>
+      </article>
+    </div>
+
+    <!-- Navigazione a Fondo Pagina -->
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; margin-top: 36px;">
+      <a href="classificazione.html" class="home-btn">← 2. Classificazione & Grafici</a>
+      <a href="test.html" class="btn btn-quiz" style="width: auto; padding: 12px 24px;">
+        Vai a 4. Mettiti alla Prova: Quiz ➔
+      </a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      Tutti i moduli sono collegati e navigabili in locale.<br>
+      Software ufficiale GeoGebra integrato tramite iframe standard.
+    </footer>
+
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
