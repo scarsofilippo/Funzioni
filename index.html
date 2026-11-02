@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Funzioni Reali da ℝ in ℝ - Hub Didattico</title>
+  
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- KaTeX per rendering formule matematiche -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+</head>
+<body>
+
+  <div class="wrapper-hub">
+    <!-- Badge -->
+    <div class="badge">📐 Quaderno di Studio & Verifica — Analisi Matematica</div>
+    
+    <!-- Titolo Principale -->
+    <h1 class="main-title">Funzioni Reali da ℝ in ℝ</h1>
+    
+    <!-- Sottotitolo -->
+    <p class="subtitle">
+      Seleziona una delle quattro sezioni per esplorare le definizioni teoriche, visualizzare la classificazione 
+      con grafici dinamici, sperimentare con GeoGebra o metterti alla prova con il quiz interattivo.
+    </p>
+
+    <!-- Griglia delle 4 Card Tematiche -->
+    <div class="grid-hub">
+      
+      <!-- Card 1: Definizione -->
+      <a href="definizione.html" class="card-link card-def">
+        <div class="card-icon">🧠</div>
+        <h2>Definizione & Proprietà</h2>
+        <p>
+          Concetto formale di funzione, calcolo del dominio naturale, codominio vs immagine, 
+          test della retta verticale e simmetrie pari/dispari.
+        </p>
+        <div class="btn btn-def">
+          Esplora la Teoria ➔
+        </div>
+      </a>
+
+      <!-- Card 2: Classificazione -->
+      <a href="classificazione.html" class="card-link card-class">
+        <div class="card-icon">📊</div>
+        <h2>Classificazione & Grafici</h2>
+        <p>
+          L'albero completo: funzioni algebriche (intere, fratte, irrazionali) e trascendenti 
+          (esponenziali, logaritmi, seni) con visualizzatore a slider.
+        </p>
+        <div class="btn btn-class">
+          Visualizza i Grafici ➔
+        </div>
+      </a>
+
+      <!-- Card 3: GeoGebra -->
+      <a href="geogebra.html" class="card-link card-geo">
+        <div class="card-icon">📐</div>
+        <h2>Laboratorio GeoGebra</h2>
+        <p>
+          Calcolatrice grafica suite incorporata, comandi rapidi per asintoti, zeri e derivate, 
+          e guida all'uso dei cursori dinamici.
+        </p>
+        <div class="btn btn-geo">
+          Apri il Laboratorio ➔
+        </div>
+      </a>
+
+      <!-- Card 4: Quiz -->
+      <a href="test.html" class="card-link card-quiz">
+        <div class="card-icon">📝</div>
+        <h2>Quiz Interattivo</h2>
+        <p>
+          Metti alla prova la tua preparazione con 10 quesiti completi di spiegazioni 
+          matematiche passo per passo e calcolo del punteggio.
+        </p>
+        <div class="btn btn-quiz">
+          Inizia il Quiz ➔
+        </div>
+      </a>
+
+    </div>
+
+    <!-- Mini-Widget Didattico: Macchina delle Funzioni -->
+    <div class="machine-box">
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+        <strong style="color: #fff; font-size: 15px; display: flex; align-items: center; gap: 6px;">
+          <span>💡</span> La Funzione come "Macchina di Trasformazione"
+        </strong>
+        <span class="badge" style="margin: 0; padding: 3px 10px; font-size: 11px;">Interattivo</span>
+      </div>
+      <p style="font-size: 13.5px; color: var(--text-muted); margin-bottom: 14px;">
+        Una funzione $y = f(x)$ associa ad ogni valore di <strong>input ($x$)</strong> uno e un solo 
+        valore di <strong>output ($y$)</strong>. Prova a variare il valore di $x$:
+      </p>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px;">
+        <div>
+          <label class="control-label" for="heroFuncSelect">Legge Matematica $f(x)$:</label>
+          <select id="heroFuncSelect" class="control-select">
+            <option value="quadratic">f(x) = x² - 4 (Quadratica / Parabola)</option>
+            <option value="linear">f(x) = 2x + 3 (Lineare / Retta)</option>
+            <option value="sine">f(x) = sin(x) (Goniometrica / Seno)</option>
+            <option value="exp">f(x) = 2^x (Esponenziale)</option>
+          </select>
+        </div>
+        <div>
+          <label class="control-label" for="heroXInput">Valore di Input ($x$):</label>
+          <input type="number" id="heroXInput" class="control-input" value="3" step="0.5">
+        </div>
+      </div>
+
+      <div class="machine-flow">
+        <div class="flow-node">
+          <strong>Input (x)</strong>
+          <span id="heroInputBadge">3</span>
+        </div>
+        <div class="flow-arrow">➔ [ f(x) ] ➔</div>
+        <div class="flow-node">
+          <strong>Output (y = f(x))</strong>
+          <span id="heroResultOutput">5</span>
+        </div>
+      </div>
+
+      <div style="text-align: center; font-family: monospace; font-size: 13px; color: var(--accent-def-light); font-weight: 600;" id="heroFormulaLabel">
+        f(3) = (3)² - 4 = 5
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      Tutti i moduli sono collegati e navigabili in locale senza bisogno di connessione internet.<br>
+      Contenuti matematici ispirati a <em>YouMath</em> e <em>Wikipedia</em>.
+    </footer>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
